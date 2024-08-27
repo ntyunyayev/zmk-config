@@ -147,19 +147,19 @@
 
         num_layer {
             bindings = <
-//        ┌─────┬─────┬─────┬─────┬─────┐   ┌──────┬──────┬──────┬──────┬─────┐
-//        │     │     │     │     │     │   │ KP_7 │ KP_8 │ kp_+ │      │     │
-//        ├─────┼─────┼─────┼─────┼─────┤   ├──────┼──────┼──────┼──────┼─────┤
-//        │     │     │     │     │     │   │ KP_4 │ KP_6 │ kp_- │      │     │
-//        ├─────┼─────┼─────┼─────┼─────┤   ├──────┼──────┼──────┼──────┼─────┤
-//        │     │     │     │     │     │   │ KP_1 │ KP_2 │ kp_* │ kp_/ │     │
-//        └─────┴─────┴─────┼─────┼─────┤   ├──────┼──────┼──────┴──────┴─────┘
-//                          │     │     │   │ KP_0 │      │                    
-//                          └─────┴─────┘   └──────┴──────┘                    
-      &trans   &trans   &trans   &trans   &trans       &kp KP_7   &kp KP_8   &kp KP_PLUS       &trans          &trans
-      &trans   &trans   &trans   &trans   &trans       &kp KP_4   &kp KP_6   &kp KP_MINUS      &trans          &trans
-      &trans   &trans   &trans   &trans   &trans       &kp KP_1   &kp KP_2   &kp KP_MULTIPLY   &kp KP_DIVIDE   &trans
-                                 &trans   &trans       &kp KP_0   &trans                                             
+//        ┌─────┬─────┬─────┬─────┬─────┐   ┌───┬─────┬──────┬──────┬─────┐
+//        │     │     │     │     │     │   │ 7 │  8  │ kp_+ │      │     │
+//        ├─────┼─────┼─────┼─────┼─────┤   ├───┼─────┼──────┼──────┼─────┤
+//        │     │     │     │     │     │   │ 4 │  6  │ kp_- │      │     │
+//        ├─────┼─────┼─────┼─────┼─────┤   ├───┼─────┼──────┼──────┼─────┤
+//        │     │     │     │     │     │   │ 1 │  2  │ kp_* │ kp_/ │     │
+//        └─────┴─────┴─────┼─────┼─────┤   ├───┼─────┼──────┴──────┴─────┘
+//                          │     │     │   │ 0 │     │                    
+//                          └─────┴─────┘   └───┴─────┘                    
+      &trans   &trans   &trans   &trans   &trans       &kp KP_N7   &kp KP_N8   &kp KP_PLUS       &trans          &trans
+      &trans   &trans   &trans   &trans   &trans       &kp KP_N4   &kp KP_N6   &kp KP_MINUS      &trans          &trans
+      &trans   &trans   &trans   &trans   &trans       &kp KP_N1   &kp KP_N2   &kp KP_MULTIPLY   &kp KP_DIVIDE   &trans
+                                 &trans   &trans       &kp KP_N0   &trans                                              
             >;
         };
 
