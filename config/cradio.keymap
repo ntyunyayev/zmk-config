@@ -50,6 +50,18 @@
             key-positions = <26 27>;
             bindings = <&kp ESC>;
         };
+        combo_bootloader_left {
+            timeout-ms = <25>;
+            key-positions = <0 1>;
+            bindings = <&bootloader>;
+            layers = <2>;
+        };
+        combo_bootloader_right {
+            timeout-ms = <25>;
+            key-positions = <8 9>;
+            bindings = <&bootloader>;
+            layers = <2>;
+        };
     };
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -99,19 +111,19 @@
 
         nav_layer {
             bindings = <
-//        ┌──────┬─────────┬─────────┬─────────┬─────┐   ┌─────┬─────────┬─────────┬─────┬─────┐
-//        │      │         │         │         │     │   │     │ lctl(D) │ lctl(U) │     │     │
-//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├─────┼─────────┼─────────┼─────┼─────┤
-//        │      │         │         │         │     │   │     │         │         │     │     │
-//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├─────┼─────────┼─────────┼─────┼─────┤
-//        │ lsft │ lctl(X) │ lctl(C) │ lctl(V) │     │   │     │         │         │     │     │
-//        └──────┴─────────┴─────────┼─────────┼─────┤   ├─────┼─────────┼─────────┴─────┴─────┘
-//                                   │         │     │   │     │         │                      
-//                                   └─────────┴─────┘   └─────┴─────────┘                      
-      &trans      &trans      &trans      &trans      &trans       &trans   &kp LC(D)   &kp LC(U)   &trans   &trans
-      &trans      &trans      &trans      &trans      &trans       &trans   &trans      &trans      &trans   &trans
-      &kp LSHFT   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans       &trans   &trans      &trans      &trans   &trans
-                                          &trans      &trans       &trans   &trans                                 
+//        ┌──────┬─────────┬─────────┬─────────┬─────┐   ┌──────┬─────────┬─────────┬──────┬─────┐
+//        │      │         │         │         │     │   │      │ lctl(D) │ lctl(U) │      │     │
+//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├──────┼─────────┼─────────┼──────┼─────┤
+//        │      │         │         │         │     │   │ left │  down   │   up    │ rght │     │
+//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├──────┼─────────┼─────────┼──────┼─────┤
+//        │ lsft │ lctl(X) │ lctl(C) │ lctl(V) │     │   │      │         │         │      │     │
+//        └──────┴─────────┴─────────┼─────────┼─────┤   ├──────┼─────────┼─────────┴──────┴─────┘
+//                                   │         │     │   │      │         │                       
+//                                   └─────────┴─────┘   └──────┴─────────┘                       
+      &trans      &trans      &trans      &trans      &trans       &trans     &kp LC(D)   &kp LC(U)   &trans      &trans
+      &trans      &trans      &trans      &trans      &trans       &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &trans
+      &kp LSHFT   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans       &trans     &trans      &trans      &trans      &trans
+                                          &trans      &trans       &trans     &trans                                    
             >;
         };
 
@@ -153,19 +165,19 @@
 
         french_layer {
             bindings = <
-//        ┌─────┬─────┬─────┬─────────┬──────────┐   ┌──────┬──────┬──────┬──────┬─────┐
-//        │     │     │     │ ralt(C) │ &e_aigue │   │ KP_7 │ KP_8 │ kp_+ │      │     │
-//        ├─────┼─────┼─────┼─────────┼──────────┤   ├──────┼──────┼──────┼──────┼─────┤
-//        │     │     │     │         │          │   │ KP_4 │ KP_6 │ kp_- │      │     │
-//        ├─────┼─────┼─────┼─────────┼──────────┤   ├──────┼──────┼──────┼──────┼─────┤
-//        │     │     │     │         │          │   │ KP_1 │ KP_2 │ kp_* │ kp_/ │     │
-//        └─────┴─────┴─────┼─────────┼──────────┤   ├──────┼──────┼──────┴──────┴─────┘
-//                          │         │          │   │ KP_0 │      │                    
-//                          └─────────┴──────────┘   └──────┴──────┘                    
-      &trans   &trans   &trans   &kp RA(C)   &e_aigue       &kp KP_7   &kp KP_8   &kp KP_PLUS       &trans          &trans
-      &trans   &trans   &trans   &trans      &trans         &kp KP_4   &kp KP_6   &kp KP_MINUS      &trans          &trans
-      &trans   &trans   &trans   &trans      &trans         &kp KP_1   &kp KP_2   &kp KP_MULTIPLY   &kp KP_DIVIDE   &trans
-                                 &trans      &trans         &kp KP_0   &trans                                             
+//        ┌─────┬─────┬─────┬─────────┬──────────┐   ┌─────┬─────┬─────┬─────┬─────┐
+//        │     │     │     │ ralt(C) │ &e_aigue │   │     │     │     │     │     │
+//        ├─────┼─────┼─────┼─────────┼──────────┤   ├─────┼─────┼─────┼─────┼─────┤
+//        │     │     │     │         │          │   │     │     │     │     │     │
+//        ├─────┼─────┼─────┼─────────┼──────────┤   ├─────┼─────┼─────┼─────┼─────┤
+//        │     │     │     │         │          │   │     │     │     │     │     │
+//        └─────┴─────┴─────┼─────────┼──────────┤   ├─────┼─────┼─────┴─────┴─────┘
+//                          │         │          │   │     │     │                  
+//                          └─────────┴──────────┘   └─────┴─────┘                  
+      &trans   &trans   &trans   &kp RA(C)   &e_aigue       &trans   &trans   &trans   &trans   &trans
+      &trans   &trans   &trans   &trans      &trans         &trans   &trans   &trans   &trans   &trans
+      &trans   &trans   &trans   &trans      &trans         &trans   &trans   &trans   &trans   &trans
+                                 &trans      &trans         &trans   &trans                           
             >;
         };
     };
