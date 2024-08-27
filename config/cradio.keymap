@@ -5,12 +5,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define DEFAULT 0
-#define SYM     1
-#define NAV     2
-#define FROW    3
-#define NUM     4
-#define FRENCH  5
+#define LAYER_DEFAULT 0
+#define LAYER_SYM     1
+#define LAYER_NAV     2
+#define LAYER_FROW    3
+#define LAYER_NUM     4
+#define LAYER_FRENCH  5
 
 / {
     behaviors {
@@ -75,19 +75,19 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-//        ┌───┬────────────┬────────────┬────────────┬────────────┐   ┌────────────┬────────────┬────────────┬────────────┬───┐
-//        │ Q │     W      │     E      │     R      │     T      │   │     Y      │     U      │     I      │     O      │ P │
-//        ├───┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼───┤
-//        │ A │ &ht lgui S │ &ht lsft D │ &ht lctl F │ &ht lalt G │   │ &ht lalt H │ &ht rctl J │ &ht rsft K │ &ht lgui L │ ; │
-//        ├───┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼───┤
-//        │ Z │     X      │     C      │     V      │     B      │   │     N      │     M      │     ,      │     .      │ / │
-//        └───┴────────────┴────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴───┘
-//                                      │  lt 2 tab  │    lsft    │   │    spc     │ lt 1 bspc  │                              
-//                                      └────────────┴────────────┘   └────────────┴────────────┘                              
-      &kp Q   &kp W        &kp E         &kp R         &kp T            &kp Y        &kp U         &kp I         &kp O        &kp P   
-      &kp A   &ht LGUI S   &ht LSHFT D   &ht LCTRL F   &ht LALT G       &ht LALT H   &ht RCTRL J   &ht RSHFT K   &ht LGUI L   &kp SEMI
-      &kp Z   &kp X        &kp C         &kp V         &kp B            &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH
-                                         &lt 2 TAB     &kp LSHFT        &kp SPACE    &lt 1 BSPC                                       
+//        ┌───┬────────────┬────────────┬────────────────────┬──────────────────┐   ┌─────────────────────┬─────────────────────┬────────────┬────────────┬───┐
+//        │ Q │     W      │     E      │         R          │ lt laltYER_NUM T │   │          Y          │          U          │     I      │     O      │ P │
+//        ├───┼────────────┼────────────┼────────────────────┼──────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
+//        │ A │ &ht lgui S │ &ht lsft D │     &ht lctl F     │    &ht lalt G    │   │     &ht lalt H      │     &ht rctl J      │ &ht rsft K │ &ht lgui L │ ; │
+//        ├───┼────────────┼────────────┼────────────────────┼──────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
+//        │ Z │     X      │     C      │         V          │        B         │   │          N          │ lt laltYER_FRENCH M │     ,      │     .      │ / │
+//        └───┴────────────┴────────────┼────────────────────┼──────────────────┤   ├─────────────────────┼─────────────────────┼────────────┴────────────┴───┘
+//                                      │ lt laltYER_NAV tab │       lsft       │   │ lt laltYER_FROW spc │ lt laltYER_SYM bspc │                              
+//                                      └────────────────────┴──────────────────┘   └─────────────────────┴─────────────────────┘                              
+      &kp Q   &kp W        &kp E         &kp R               &lt LAYER_NUM T       &kp Y                  &kp U                &kp I         &kp O        &kp P   
+      &kp A   &ht LGUI S   &ht LSHFT D   &ht LCTRL F         &ht LALT G            &ht LALT H             &ht RCTRL J          &ht RSHFT K   &ht LGUI L   &kp SEMI
+      &kp Z   &kp X        &kp C         &kp V               &kp B                 &kp N                  &lt LAYER_FRENCH M   &kp COMMA     &kp DOT      &kp FSLH
+                                         &lt LAYER_NAV TAB   &kp LSHFT             &lt LAYER_FROW SPACE   &lt LAYER_SYM BSPC                                      
             >;
         };
 
