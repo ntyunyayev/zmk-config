@@ -103,6 +103,16 @@
             key-positions = <26 27>;
             bindings = <&kp DEL>;
         };
+        combo_bootloader_left {
+            timeout-ms = <25>;
+            key-positions = <0 20>;
+            bindings = <&bootloader>;
+        };
+        combo_bootloader_right {
+            timeout-ms = <25>;
+            key-positions = <9 29>;
+            bindings = <&bootloader>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -126,26 +136,26 @@
 
         symbols_layer {
             bindings = <
-//        ┌─────┬──────┬──────┬──────┬─────┐   ┌─────┬─────┬───┬───┬──────┐
-//        │     │  {   │  [   │  (   │  ^  │   │  ~  │  )  │ ] │ } │ boot │
-//        ├─────┼──────┼──────┼──────┼─────┤   ├─────┼─────┼───┼───┼──────┤
-//        │     │ kp_- │ kp_* │ kp_= │  _  │   │  $  │  \  │ & │ ! │      │
-//        ├─────┼──────┼──────┼──────┼─────┤   ├─────┼─────┼───┼───┼──────┤
-//        │     │ kp_+ │  #   │  @   │  '  │   │  "  │  |  │ % │ ` │      │
-//        └─────┴──────┴──────┼──────┼─────┤   ├─────┼─────┼───┴───┴──────┘
-//                            │      │     │   │     │     │               
-//                            └──────┴─────┘   └─────┴─────┘               
-      &trans   &kp LBRC       &kp LBKT          &kp LPAR       &kp CARET            &kp TILDE   &kp RPAR   &kp RBKT    &kp RBRC    &bootloader
-      &trans   &kp KP_MINUS   &kp KP_MULTIPLY   &kp KP_EQUAL   &kp UNDERSCORE       &kp DLLR    &kp BSLH   &kp AMPS    &kp EXCL    &trans     
-      &trans   &kp KP_PLUS    &kp HASH          &kp AT         &kp SQT              &kp DQT     &kp PIPE   &kp PRCNT   &kp GRAVE   &trans     
-                                                &trans         &trans               &trans      &trans                                        
+//        ┌─────┬───────────────┬───────────────┬───────────────┬────────────┐   ┌────────────┬────────────┬────────────┬────────────┬────────────┐
+//        │     │       {       │       [       │       (       │     ^      │   │     ~      │     )      │     ]      │     }      │            │
+//        ├─────┼───────────────┼───────────────┼───────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
+//        │     │ &ht lgui kp_- │ &ht lsft kp_* │ &ht lctl kp_= │ &ht lalt _ │   │ &ht lalt $ │ &ht rctl \ │ &ht rsft & │ &ht lgui ! │ bt_clr_ALL │
+//        ├─────┼───────────────┼───────────────┼───────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┤
+//        │     │     kp_+      │       #       │       @       │     '      │   │     "      │     |      │     %      │     `      │            │
+//        └─────┴───────────────┴───────────────┼───────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴────────────┘
+//                                              │               │            │   │            │            │                                       
+//                                              └───────────────┴────────────┘   └────────────┴────────────┘                                       
+      &trans   &kp LBRC            &kp LBKT                &kp LPAR             &kp CARET                 &kp TILDE       &kp RPAR         &kp RBKT         &kp RBRC        &trans        
+      &trans   &ht LGUI KP_MINUS   &ht LSHFT KP_MULTIPLY   &ht LCTRL KP_EQUAL   &ht LALT UNDERSCORE       &ht LALT DLLR   &ht RCTRL BSLH   &ht RSHFT AMPS   &ht LGUI EXCL   &bt BT_CLR_ALL
+      &trans   &kp KP_PLUS         &kp HASH                &kp AT               &kp SQT                   &kp DQT         &kp PIPE         &kp PRCNT        &kp GRAVE       &trans        
+                                                           &trans               &trans                    &trans          &trans                                                          
             >;
         };
 
         nav_layer {
             bindings = <
 //        ┌──────┬─────────┬─────────┬─────────┬─────┐   ┌──────┬─────────┬─────────┬──────┬─────┐
-//        │ boot │         │         │         │     │   │      │ lctl(D) │ lctl(U) │      │     │
+//        │      │         │         │         │     │   │      │ lctl(D) │ lctl(U) │      │     │
 //        ├──────┼─────────┼─────────┼─────────┼─────┤   ├──────┼─────────┼─────────┼──────┼─────┤
 //        │      │         │         │         │     │   │ left │  down   │   up    │ rght │     │
 //        ├──────┼─────────┼─────────┼─────────┼─────┤   ├──────┼─────────┼─────────┼──────┼─────┤
@@ -153,10 +163,10 @@
 //        └──────┴─────────┴─────────┼─────────┼─────┤   ├──────┼─────────┼─────────┴──────┴─────┘
 //                                   │         │     │   │      │         │                       
 //                                   └─────────┴─────┘   └──────┴─────────┘                       
-      &bootloader   &trans      &trans      &trans      &trans       &trans     &kp LC(D)   &kp LC(U)   &trans      &trans
-      &trans        &trans      &trans      &trans      &trans       &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &trans
-      &kp LSHFT     &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans       &trans     &trans      &trans      &trans      &trans
-                                            &trans      &trans       &trans     &trans                                    
+      &trans      &trans      &trans      &trans      &trans       &trans     &kp LC(D)   &kp LC(U)   &trans      &trans
+      &trans      &trans      &trans      &trans      &trans       &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &trans
+      &kp LSHFT   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans       &trans     &trans      &trans      &trans      &trans
+                                          &trans      &trans       &trans     &trans                                    
             >;
         };
 
