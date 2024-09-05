@@ -5,12 +5,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define LAYER_DEFAULT 0
-#define LAYER_SYM     1
-#define LAYER_NAV     2
-#define LAYER_FROW    3
-#define LAYER_NUM     4
-#define LAYER_FRENCH  5
+#define LAYER_DEFAULT  0
+#define LAYER_SYM      1
+#define LAYER_NAV      2
+#define LAYER_FROW     3
+#define LAYER_NUM      4
+#define LAYER_FRENCH   5
+#define LAYER_VIM_TMUX 6
 
 &lt {
     quick-tap-ms = <180>;
@@ -113,6 +114,27 @@
                 = <&macro_tap &kp SPACE &kp N4>
                 ;
         };
+        prefix_u: prefix_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(SPACE) &kp U>
+                ;
+        };
+        prefix_b: prefix_b {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(SPACE) &kp B>
+                ;
+        };
+        prefix_m: prefix_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(SPACE) &kp M>
+                ;
+        };
     };
     combos {
         compatible = "zmk,combos";
@@ -146,19 +168,19 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <                                 
-//        ┌───┬────────────┬────────────┬────────────────────┬────────────┐   ┌─────────────────────┬─────────────────────┬────────────┬────────────┬───┐
-//        │ Q │     W      │     E      │  lt laltYER_NUM R  │     T      │   │          Y          │          U          │     I      │     O      │ P │
-//        ├───┼────────────┼────────────┼────────────────────┼────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
-//        │ A │ &ht lgui S │ &ht lsft D │     &ht lctl F     │ &ht lalt G │   │     &ht lalt H      │     &ht rctl J      │ &ht rsft K │ &ht lgui L │ ; │
-//        ├───┼────────────┼────────────┼────────────────────┼────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
-//        │ Z │     X      │     C      │         V          │     B      │   │          N          │ lt laltYER_FRENCH M │     ,      │     .      │ / │
-//        └───┴────────────┴────────────┼────────────────────┼────────────┤   ├─────────────────────┼─────────────────────┼────────────┴────────────┴───┘
-//                                      │ lt laltYER_NAV tab │    lsft    │   │ lt laltYER_FROW spc │ lt laltYER_SYM bspc │                              
-//                                      └────────────────────┴────────────┘   └─────────────────────┴─────────────────────┘                              
-      &kp Q   &kp W        &kp E         &lt LAYER_NUM R     &kp T            &kp Y                  &kp U                &kp I         &kp O        &kp P   
-      &kp A   &ht LGUI S   &ht LSHFT D   &ht LCTRL F         &ht LALT G       &ht LALT H             &ht RCTRL J          &ht RSHFT K   &ht LGUI L   &kp SEMI
-      &kp Z   &kp X        &kp C         &kp V               &kp B            &kp N                  &lt LAYER_FRENCH M   &kp COMMA     &kp DOT      &kp FSLH
-                                         &lt LAYER_NAV TAB   &kp LSHFT        &lt LAYER_FROW SPACE   &lt LAYER_SYM BSPC                                      
+//        ┌───┬────────────┬────────────┬────────────────────┬───────────────────────┐   ┌─────────────────────┬─────────────────────┬────────────┬────────────┬───┐
+//        │ Q │     W      │     E      │  lt laltYER_NUM R  │           T           │   │          Y          │          U          │     I      │     O      │ P │
+//        ├───┼────────────┼────────────┼────────────────────┼───────────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
+//        │ A │ &ht lgui S │ &ht lsft D │     &ht lctl F     │      &ht lalt G       │   │     &ht lalt H      │     &ht rctl J      │ &ht rsft K │ &ht lgui L │ ; │
+//        ├───┼────────────┼────────────┼────────────────────┼───────────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
+//        │ Z │     X      │     C      │         V          │ lt laltYER_VIM_TMUX B │   │          N          │ lt laltYER_FRENCH M │     ,      │     .      │ / │
+//        └───┴────────────┴────────────┼────────────────────┼───────────────────────┤   ├─────────────────────┼─────────────────────┼────────────┴────────────┴───┘
+//                                      │ lt laltYER_NAV tab │         lsft          │   │ lt laltYER_FROW spc │ lt laltYER_SYM bspc │                              
+//                                      └────────────────────┴───────────────────────┘   └─────────────────────┴─────────────────────┘                              
+      &kp Q   &kp W        &kp E         &lt LAYER_NUM R     &kp T                      &kp Y                  &kp U                &kp I         &kp O        &kp P   
+      &kp A   &ht LGUI S   &ht LSHFT D   &ht LCTRL F         &ht LALT G                 &ht LALT H             &ht RCTRL J          &ht RSHFT K   &ht LGUI L   &kp SEMI
+      &kp Z   &kp X        &kp C         &kp V               &lt LAYER_VIM_TMUX B       &kp N                  &lt LAYER_FRENCH M   &kp COMMA     &kp DOT      &kp FSLH
+                                         &lt LAYER_NAV TAB   &kp LSHFT                  &lt LAYER_FROW SPACE   &lt LAYER_SYM BSPC                                      
             >;
         };
 
@@ -182,19 +204,19 @@
 
         nav_layer {
             bindings = <
-//        ┌──────┬─────────┬─────────┬─────────┬─────┐   ┌────────────┬────────────┬────────────┬────────────┬─────┐
-//        │      │         │         │         │     │   │            │            │            │            │     │
-//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
-//        │      │         │         │         │     │   │    left    │    down    │     up     │    rght    │     │
-//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
-//        │ lsft │ lctl(X) │ lctl(C) │ lctl(V) │     │   │ &grapple_1 │ &grapple_2 │ &grapple_3 │ &grapple_4 │     │
-//        └──────┴─────────┴─────────┼─────────┼─────┤   ├────────────┼────────────┼────────────┴────────────┴─────┘
-//                                   │         │     │   │            │            │                                
-//                                   └─────────┴─────┘   └────────────┴────────────┘                                
-      &trans      &trans      &trans      &trans      &trans       &trans       &trans       &trans       &trans       &trans
-      &trans      &trans      &trans      &trans      &trans       &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans
-      &kp LSHFT   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans       &grapple_1   &grapple_2   &grapple_3   &grapple_4   &trans
-                                          &trans      &trans       &trans       &trans                                       
+//        ┌──────┬─────────┬─────────┬─────────┬─────┐   ┌──────┬──────┬─────┬──────┬─────┐
+//        │      │         │         │         │     │   │      │      │     │      │     │
+//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├──────┼──────┼─────┼──────┼─────┤
+//        │      │         │         │         │     │   │ left │ down │ up  │ rght │     │
+//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├──────┼──────┼─────┼──────┼─────┤
+//        │ lsft │ lctl(X) │ lctl(C) │ lctl(V) │     │   │      │      │     │      │     │
+//        └──────┴─────────┴─────────┼─────────┼─────┤   ├──────┼──────┼─────┴──────┴─────┘
+//                                   │         │     │   │      │      │                   
+//                                   └─────────┴─────┘   └──────┴──────┘                   
+      &trans      &trans      &trans      &trans      &trans       &trans     &trans     &trans   &trans      &trans
+      &trans      &trans      &trans      &trans      &trans       &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &trans
+      &kp LSHFT   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans       &trans     &trans     &trans   &trans      &trans
+                                          &trans      &trans       &trans     &trans                                
             >;
         };
 
@@ -249,6 +271,23 @@
       &trans    &trans    &a_grave   &u_accent       &e_grave       &trans   &trans   &trans   &trans   &trans
       &o_circ   &i_circ   &a_circ    &trans          &e_circ        &trans   &trans   &trans   &trans   &trans
                                      &trans          &trans         &trans   &trans                           
+            >;
+        };
+        french_vim_tmux_layer {
+            bindings = <
+//        ┌─────┬─────┬─────┬─────┬─────┐   ┌────────────┬────────────┬────────────┬────────────┬─────┐
+//        │     │     │     │     │     │   │            │ &prefix_u  │            │            │     │
+//        ├─────┼─────┼─────┼─────┼─────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
+//        │     │     │     │     │     │   │ &grapple_1 │ &grapple_2 │ &grapple_3 │ &grapple_4 │     │
+//        ├─────┼─────┼─────┼─────┼─────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
+//        │     │     │     │     │     │   │ &prefix_b  │ &prefix_m  │            │            │     │
+//        └─────┴─────┴─────┼─────┼─────┤   ├────────────┼────────────┼────────────┴────────────┴─────┘
+//                          │     │     │   │            │            │                                
+//                          └─────┴─────┘   └────────────┴────────────┘                                
+      &trans   &trans   &trans   &trans   &trans       &trans       &prefix_u    &trans       &trans       &trans
+      &trans   &trans   &trans   &trans   &trans       &grapple_1   &grapple_2   &grapple_3   &grapple_4   &trans
+      &trans   &trans   &trans   &trans   &trans       &prefix_b    &prefix_m    &trans       &trans       &trans
+                                 &trans   &trans       &trans       &trans                                       
             >;
         };
     };
