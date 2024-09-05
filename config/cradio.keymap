@@ -85,6 +85,34 @@
                 = <&macro_tap &kp RA(GRAVE) &kp U>
                 ;
         };
+        grapple_1: grapple_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SPACE &kp N1>
+                ;
+        };
+        grapple_2: grapple_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SPACE &kp N2>
+                ;
+        };
+        grapple_3: grapple_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SPACE &kp N3>
+                ;
+        };
+        grapple_4: grapple_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp SPACE &kp N4>
+                ;
+        };
     };
     combos {
         compatible = "zmk,combos";
@@ -136,37 +164,37 @@
 
         symbols_layer {
             bindings = <
-//        ┌─────┬──────┬──────┬──────┬─────┐   ┌─────┬─────┬───┬───┬──────┐
-//        │     │  {   │  [   │  (   │  ^  │   │  ~  │  )  │ ] │ } │ boot │
-//        ├─────┼──────┼──────┼──────┼─────┤   ├─────┼─────┼───┼───┼──────┤
-//        │     │ kp_- │ kp_* │ kp_= │  _  │   │  $  │  \  │ & │ ! │      │
-//        ├─────┼──────┼──────┼──────┼─────┤   ├─────┼─────┼───┼───┼──────┤
-//        │     │ kp_+ │  #   │  @   │  '  │   │  "  │  |  │ % │ ` │      │
-//        └─────┴──────┴──────┼──────┼─────┤   ├─────┼─────┼───┴───┴──────┘
-//                            │      │     │   │     │     │               
-//                            └──────┴─────┘   └─────┴─────┘               
+//        ┌─────┬──────┬──────┬──────┬─────┐   ┌─────┬─────┬───┬───┬─────┐
+//        │     │  {   │  [   │  (   │  ^  │   │  ~  │  )  │ ] │ } │     │
+//        ├─────┼──────┼──────┼──────┼─────┤   ├─────┼─────┼───┼───┼─────┤
+//        │     │ kp_- │ kp_* │ kp_= │  _  │   │  $  │  \  │ & │ ! │     │
+//        ├─────┼──────┼──────┼──────┼─────┤   ├─────┼─────┼───┼───┼─────┤
+//        │     │ kp_+ │  #   │  @   │  '  │   │  "  │  |  │ % │ ` │     │
+//        └─────┴──────┴──────┼──────┼─────┤   ├─────┼─────┼───┴───┴─────┘
+//                            │      │     │   │     │     │              
+//                            └──────┴─────┘   └─────┴─────┘              
       &trans   &kp LBRC       &kp LBKT          &kp LPAR       &kp CARET            &kp TILDE   &kp RPAR   &kp RBKT    &kp RBRC    &trans
-      &trans   &kp KP_MINUS   &kp KP_MULTIPLY   &kp KP_EQUAL   &kp UNDERSCORE       &kp DLLR    &kp BSLH   &kp AMPS    &kp EXCL    &trans     
-      &trans   &kp KP_PLUS    &kp HASH          &kp AT         &kp SQT              &kp DQT     &kp PIPE   &kp PRCNT   &kp GRAVE   &trans     
-                                                &trans         &trans               &trans      &trans                                        
+      &trans   &kp KP_MINUS   &kp KP_MULTIPLY   &kp KP_EQUAL   &kp UNDERSCORE       &kp DLLR    &kp BSLH   &kp AMPS    &kp EXCL    &trans
+      &trans   &kp KP_PLUS    &kp HASH          &kp AT         &kp SQT              &kp DQT     &kp PIPE   &kp PRCNT   &kp GRAVE   &trans
+                                                &trans         &trans               &trans      &trans                                   
             >;
         };
 
         nav_layer {
             bindings = <
-//        ┌──────┬─────────┬─────────┬─────────┬─────┐   ┌──────┬─────────┬─────────┬──────┬─────┐
-//        │      │         │         │         │     │   │      │ lctl(D) │ lctl(U) │      │     │
-//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├──────┼─────────┼─────────┼──────┼─────┤
-//        │      │         │         │         │     │   │ left │  down   │   up    │ rght │     │
-//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├──────┼─────────┼─────────┼──────┼─────┤
-//        │ lsft │ lctl(X) │ lctl(C) │ lctl(V) │     │   │      │         │         │      │     │
-//        └──────┴─────────┴─────────┼─────────┼─────┤   ├──────┼─────────┼─────────┴──────┴─────┘
-//                                   │         │     │   │      │         │                       
-//                                   └─────────┴─────┘   └──────┴─────────┘                       
-      &trans   &trans      &trans      &trans      &trans       &trans     &kp LC(D)   &kp LC(U)   &trans      &trans
-      &trans        &trans      &trans      &trans      &trans       &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &trans
-      &kp LSHFT     &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans       &trans     &trans      &trans      &trans      &trans
-                                            &trans      &trans       &trans     &trans                                    
+//        ┌──────┬─────────┬─────────┬─────────┬─────┐   ┌────────────┬────────────┬────────────┬────────────┬─────┐
+//        │      │         │         │         │     │   │            │            │            │            │     │
+//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
+//        │      │         │         │         │     │   │    left    │    down    │     up     │    rght    │     │
+//        ├──────┼─────────┼─────────┼─────────┼─────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
+//        │ lsft │ lctl(X) │ lctl(C) │ lctl(V) │     │   │ &grapple_1 │ &grapple_2 │ &grapple_3 │ &grapple_4 │     │
+//        └──────┴─────────┴─────────┼─────────┼─────┤   ├────────────┼────────────┼────────────┴────────────┴─────┘
+//                                   │         │     │   │            │            │                                
+//                                   └─────────┴─────┘   └────────────┴────────────┘                                
+      &trans      &trans      &trans      &trans      &trans       &trans       &trans       &trans       &trans       &trans
+      &trans      &trans      &trans      &trans      &trans       &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans
+      &kp LSHFT   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans       &grapple_1   &grapple_2   &grapple_3   &grapple_4   &trans
+                                          &trans      &trans       &trans       &trans                                       
             >;
         };
 
