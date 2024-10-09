@@ -86,32 +86,39 @@
                 = <&macro_tap &kp RA(GRAVE) &kp U>
                 ;
         };
-        grapple_1: grapple_1 {
+        prefix_0: prefix_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp SPACE &kp N1>
+                = <&macro_tap &kp LC(SPACE) &kp N0>
                 ;
         };
-        grapple_2: grapple_2 {
+        prefix_1: prefix_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp SPACE &kp N2>
+                = <&macro_tap &kp LC(SPACE) &kp N1>
                 ;
         };
-        grapple_3: grapple_3 {
+        prefix_2: prefix_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp SPACE &kp N3>
+                = <&macro_tap &kp LC(SPACE) &kp N2>
                 ;
         };
-        grapple_4: grapple_4 {
+        prefix_3: prefix_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp SPACE &kp N4>
+                = <&macro_tap &kp LC(SPACE) &kp N3>
+                ;
+        };
+        prefix_4: prefix_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(SPACE) &kp N4>
                 ;
         };
         prefix_u: prefix_u {
@@ -121,11 +128,18 @@
                 = <&macro_tap &kp LC(SPACE) &kp U>
                 ;
         };
-        prefix_b: prefix_b {
+        prefix_p: prefix_p {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp LC(SPACE) &kp B>
+                = <&macro_tap &kp LC(SPACE) &kp P>
+                ;
+        };
+        prefix_n: prefix_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(SPACE) &kp N>
                 ;
         };
         prefix_m: prefix_m {
@@ -175,12 +189,12 @@
 //        ├───┼────────────┼────────────┼────────────────────┼───────────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
 //        │ Z │     X      │     C      │         V          │ lt laltYER_VIM_TMUX B │   │          N          │ lt laltYER_FRENCH M │     ,      │     .      │ / │
 //        └───┴────────────┴────────────┼────────────────────┼───────────────────────┤   ├─────────────────────┼─────────────────────┼────────────┴────────────┴───┘
-//                                      │ lt laltYER_NAV tab │         lsft          │   │ lt laltYER_FROW spc │ lt laltYER_SYM bspc │                              
-//                                      └────────────────────┴───────────────────────┘   └─────────────────────┴─────────────────────┘                              
-      &kp Q   &kp W        &kp E         &lt LAYER_NUM R     &kp T                      &kp Y                  &kp U                &kp I         &kp O        &kp P   
+//                                      │ lt laltYER_NAV tab │         lsft          │   │ lt laltYER_FROW spc │ lt laltYER_SYM bspc │
+//                                      └────────────────────┴───────────────────────┘   └─────────────────────┴─────────────────────┘
+      &kp Q   &kp W        &kp E         &lt LAYER_NUM R     &kp T                      &kp Y                  &kp U                &kp I         &kp O        &kp P
       &kp A   &ht LGUI S   &ht LSHFT D   &ht LCTRL F         &ht LALT G                 &ht LALT H             &ht RCTRL J          &ht RSHFT K   &ht LGUI L   &kp SEMI
       &kp Z   &kp X        &kp C         &kp V               &lt LAYER_VIM_TMUX B       &kp N                  &lt LAYER_FRENCH M   &kp COMMA     &kp DOT      &kp FSLH
-                                         &lt LAYER_NAV TAB   &kp LSHFT                  &lt LAYER_FROW SPACE   &lt LAYER_SYM BSPC                                      
+                                         &lt LAYER_NAV TAB   &kp LSHFT                  &lt LAYER_FROW SPACE   &lt LAYER_SYM BSPC
             >;
         };
 
@@ -193,12 +207,12 @@
 //        ├─────┼───────────────┼───────────────┼───────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
 //        │     │     kp_+      │       #       │       @       │     '      │   │     "      │     |      │     %      │     `      │     │
 //        └─────┴───────────────┴───────────────┼───────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴─────┘
-//                                              │               │            │   │            │            │                                
-//                                              └───────────────┴────────────┘   └────────────┴────────────┘                                
+//                                              │               │            │   │            │            │
+//                                              └───────────────┴────────────┘   └────────────┴────────────┘
       &trans   &kp LBRC            &kp LBKT                &kp LPAR             &kp CARET                 &kp TILDE       &kp RPAR         &kp RBKT         &kp RBRC        &trans
       &trans   &ht LGUI KP_MINUS   &ht LSHFT KP_MULTIPLY   &ht LCTRL KP_EQUAL   &ht LALT UNDERSCORE       &ht LALT DLLR   &ht RCTRL BSLH   &ht RSHFT AMPS   &ht LGUI EXCL   &trans
       &trans   &kp KP_PLUS         &kp HASH                &kp AT               &kp SQT                   &kp DQT         &kp PIPE         &kp PRCNT        &kp GRAVE       &trans
-                                                           &trans               &trans                    &trans          &trans                                                  
+                                                           &trans               &trans                    &trans          &trans
             >;
         };
 
@@ -211,12 +225,12 @@
 //        ├──────┼─────────┼─────────┼─────────┼─────┤   ├──────┼──────┼─────┼──────┼─────┤
 //        │ lsft │ lctl(X) │ lctl(C) │ lctl(V) │     │   │      │      │     │      │     │
 //        └──────┴─────────┴─────────┼─────────┼─────┤   ├──────┼──────┼─────┴──────┴─────┘
-//                                   │         │     │   │      │      │                   
-//                                   └─────────┴─────┘   └──────┴──────┘                   
+//                                   │         │     │   │      │      │
+//                                   └─────────┴─────┘   └──────┴──────┘
       &trans      &trans      &trans      &trans      &trans       &trans     &trans     &trans   &trans      &trans
       &trans      &trans      &trans      &trans      &trans       &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &trans
       &kp LSHFT   &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans       &trans     &trans     &trans   &trans      &trans
-                                          &trans      &trans       &trans     &trans                                
+                                          &trans      &trans       &trans     &trans
             >;
         };
 
@@ -229,12 +243,12 @@
 //        ├─────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────┤
 //        │     │         │         │         │         │   │  mute   │  vold   │  volu   │         │     │
 //        └─────┴─────────┴─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┴─────────┴─────┘
-//                                  │         │         │   │         │         │                          
-//                                  └─────────┴─────────┘   └─────────┴─────────┘                          
+//                                  │         │         │   │         │         │
+//                                  └─────────┴─────────┘   └─────────┴─────────┘
       &kp F1    &kp F2       &kp F3       &kp F4       &kp F5           &kp F6       &kp F7         &kp F8         &kp F9       &kp F10
       &kp F11   &kp LG(N7)   &kp LG(N5)   &kp LG(N3)   &kp LG(N1)       &kp LG(N2)   &kp LG(N4)     &kp LG(N6)     &kp LG(N8)   &kp F12
-      &trans    &trans       &trans       &trans       &trans           &kp C_MUTE   &kp C_VOL_DN   &kp C_VOL_UP   &trans       &trans 
-                                          &trans       &trans           &trans       &trans                                            
+      &trans    &trans       &trans       &trans       &trans           &kp C_MUTE   &kp C_VOL_DN   &kp C_VOL_UP   &trans       &trans
+                                          &trans       &trans           &trans       &trans
             >;
         };
 
@@ -247,12 +261,12 @@
 //        ├─────┼─────┼─────┼─────┼─────┤   ├─────┼───┼───┼──────┼──────┤
 //        │     │     │     │     │     │   │  1  │ 2 │ 3 │ kp_* │ kp_/ │
 //        └─────┴─────┴─────┼─────┼─────┤   ├─────┼───┼───┴──────┴──────┘
-//                          │     │     │   │     │ 0 │                  
-//                          └─────┴─────┘   └─────┴───┘                  
-      &trans   &trans   &trans   &trans   &trans       &kp N7   &kp N8   &kp N9   &kp KP_PLUS       &trans       
-      &trans   &trans   &trans   &trans   &trans       &kp N4   &kp N5   &kp N6   &kp KP_MINUS      &trans       
+//                          │     │     │   │     │ 0 │
+//                          └─────┴─────┘   └─────┴───┘
+      &trans   &trans   &trans   &trans   &trans       &kp N7   &kp N8   &kp N9   &kp KP_PLUS       &trans
+      &trans   &trans   &trans   &trans   &trans       &kp N4   &kp N5   &kp N6   &kp KP_MINUS      &trans
       &trans   &trans   &trans   &trans   &trans       &kp N1   &kp N2   &kp N3   &kp KP_MULTIPLY   &kp KP_DIVIDE
-                                 &trans   &trans       &trans   &kp N0                                           
+                                 &trans   &trans       &trans   &kp N0
             >;
         };
 
@@ -265,29 +279,29 @@
 //        ├─────────┼─────────┼──────────┼───────────┼──────────┤   ├─────┼─────┼─────┼─────┼─────┤
 //        │ &o_circ │ &i_circ │ &a_circ  │           │ &e_circ  │   │     │     │     │     │     │
 //        └─────────┴─────────┴──────────┼───────────┼──────────┤   ├─────┼─────┼─────┴─────┴─────┘
-//                                       │           │          │   │     │     │                  
-//                                       └───────────┴──────────┘   └─────┴─────┘                  
+//                                       │           │          │   │     │     │
+//                                       └───────────┴──────────┘   └─────┴─────┘
       &trans    &trans    &trans     &kp RA(COMMA)   &e_aigue       &trans   &trans   &trans   &trans   &trans
       &trans    &trans    &a_grave   &u_accent       &e_grave       &trans   &trans   &trans   &trans   &trans
       &o_circ   &i_circ   &a_circ    &trans          &e_circ        &trans   &trans   &trans   &trans   &trans
-                                     &trans          &trans         &trans   &trans                           
+                                     &trans          &trans         &trans   &trans
             >;
         };
         french_vim_tmux_layer {
             bindings = <
-//        ┌─────┬─────┬─────┬─────┬─────┐   ┌────────────┬────────────┬────────────┬────────────┬─────┐
-//        │     │     │     │     │     │   │            │ &prefix_u  │            │            │     │
-//        ├─────┼─────┼─────┼─────┼─────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
-//        │     │     │     │     │     │   │ &grapple_1 │ &grapple_2 │ &grapple_3 │ &grapple_4 │     │
-//        ├─────┼─────┼─────┼─────┼─────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
-//        │     │     │     │     │     │   │ &prefix_b  │ &prefix_m  │            │            │     │
-//        └─────┴─────┴─────┼─────┼─────┤   ├────────────┼────────────┼────────────┴────────────┴─────┘
-//                          │     │     │   │            │            │                                
-//                          └─────┴─────┘   └────────────┴────────────┘                                
-      &trans   &trans   &trans   &trans   &trans       &trans       &prefix_u    &trans       &trans       &trans
-      &trans   &trans   &trans   &trans   &trans       &grapple_1   &grapple_2   &grapple_3   &grapple_4   &trans
-      &trans   &trans   &trans   &trans   &trans       &prefix_b    &prefix_m    &trans       &trans       &trans
-                                 &trans   &trans       &trans       &trans                                       
+//        ┌─────┬─────┬─────┬─────┬─────┐   ┌───────────┬───────────┬───────────┬───────────┬───────────┐
+//        │     │     │     │     │     │   │           │ &prefix_u │           │           │ &prefix_p │
+//        ├─────┼─────┼─────┼─────┼─────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
+//        │     │     │     │     │     │   │ &prefix_0 │ &prefix_1 │ &prefix_2 │ &prefix_3 │ &prefix_4 │
+//        ├─────┼─────┼─────┼─────┼─────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
+//        │     │     │     │     │     │   │ &prefix_n │ &prefix_m │           │           │           │
+//        └─────┴─────┴─────┼─────┼─────┤   ├───────────┼───────────┼───────────┴───────────┴───────────┘
+//                          │     │     │   │           │           │
+//                          └─────┴─────┘   └───────────┴───────────┘
+      &trans   &trans   &trans   &trans   &trans       &trans      &prefix_u   &trans      &trans      &prefix_p
+      &trans   &trans   &trans   &trans   &trans       &prefix_0   &prefix_1   &prefix_2   &prefix_3   &prefix_4
+      &trans   &trans   &trans   &trans   &trans       &prefix_n   &prefix_m   &trans      &trans      &trans
+                                 &trans   &trans       &trans      &trans
             >;
         };
     };
