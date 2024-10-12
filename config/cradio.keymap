@@ -156,6 +156,21 @@
                 = <&macro_tap &kp LC(SPACE) &kp C>
                 ;
         };
+        prefix_g: prefix_g {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(SPACE) &kp G>
+                ;
+        };
+        prefix_z: prefix_z {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(SPACE) &kp Z>
+                ;
+        };
+
     };
     combos {
         compatible = "zmk,combos";
@@ -296,19 +311,19 @@
         };
         french_vim_tmux_layer {
             bindings = <
-//        ┌─────┬─────┬───────────┬─────┬─────┐   ┌───────────┬───────────┬───────────┬───────────┬───────────┐
-//        │     │     │           │     │     │   │           │ &prefix_u │           │           │ &prefix_p │
-//        ├─────┼─────┼───────────┼─────┼─────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
-//        │     │     │           │     │     │   │ &prefix_0 │ &prefix_1 │ &prefix_2 │ &prefix_3 │ &prefix_4 │
-//        ├─────┼─────┼───────────┼─────┼─────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
-//        │     │     │ &prefix_c │     │     │   │ &prefix_n │ &prefix_m │           │           │           │
-//        └─────┴─────┴───────────┼─────┼─────┤   ├───────────┼───────────┼───────────┴───────────┴───────────┘
-//                                │     │     │   │           │           │
-//                                └─────┴─────┘   └───────────┴───────────┘
-      &trans   &trans   &trans      &trans   &trans       &trans      &prefix_u   &trans      &trans      &prefix_p
-      &trans   &trans   &trans      &trans   &trans       &prefix_0   &prefix_1   &prefix_2   &prefix_3   &prefix_4
-      &trans   &trans   &prefix_c   &trans   &trans       &prefix_n   &prefix_m   &trans      &trans      &trans
-                                    &trans   &trans       &trans      &trans
+//        ┌─────┬─────┬───────────┬─────┬───────────┐   ┌───────────┬───────────┬───────────┬───────────┬───────────┐
+//        │     │     │           │     │           │   │           │ &prefix_u │           │           │ &prefix_p │
+//        ├─────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
+//        │     │     │           │     │ &prefix_g │   │ &prefix_0 │ &prefix_1 │ &prefix_2 │ &prefix_3 │ &prefix_4 │
+//        ├─────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
+//        │     │     │ &prefix_c │     │           │   │ &prefix_n │ &prefix_m │           │           │           │
+//        └─────┴─────┴───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┴───────────┴───────────┘
+//                                │     │           │   │           │           │
+//                                └─────┴───────────┘   └───────────┴───────────┘
+      &trans   &trans   &trans      &trans   &trans          &trans      &prefix_u   &trans      &trans      &prefix_p
+      &trans   &trans   &trans      &trans   &prefix_g       &prefix_0   &prefix_1   &prefix_2   &prefix_3   &prefix_4
+      &trans   &trans   &prefix_c   &trans   &trans          &prefix_n   &prefix_m   &trans      &trans      &trans
+                                    &trans   &trans          &trans      &trans
             >;
         };
     };
