@@ -16,7 +16,12 @@
 &lt {
     quick-tap-ms = <180>;
 };
-       
+#define PREFIX_MACRO(name, keycode) \
+    name: name { \
+        compatible = "zmk,behavior-macro"; \
+        #binding-cells = <0>; \
+        bindings = <&macro_tap &kp LC(SPACE) &kp keycode>; \
+};
 / {
     behaviors {
         ht: hold_tap {
@@ -86,90 +91,18 @@
                 = <&macro_tap &kp RA(GRAVE) &kp U>
                 ;
         };
-        prefix_0: prefix_0 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp N0>
-                ;
-        };
-        prefix_1: prefix_1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp N1>
-                ;
-        };
-        prefix_2: prefix_2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp N2>
-                ;
-        };
-        prefix_3: prefix_3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp N3>
-                ;
-        };
-        prefix_4: prefix_4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp N4>
-                ;
-        };
-        prefix_u: prefix_u {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp U>
-                ;
-        };
-        prefix_p: prefix_p {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp P>
-                ;
-        };
-        prefix_n: prefix_n {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp N>
-                ;
-        };
-        prefix_m: prefix_m {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp M>
-                ;
-        };
-        prefix_c: prefix_c {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp C>
-                ;
-        };
-        prefix_g: prefix_g {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp G>
-                ;
-        };
-        prefix_z: prefix_z {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LC(SPACE) &kp Z>
-                ;
-        };
+        PREFIX_MACRO(prefix_0, N0)
+        PREFIX_MACRO(prefix_1, N1)
+        PREFIX_MACRO(prefix_2, N2)
+        PREFIX_MACRO(prefix_3, N3)
+        PREFIX_MACRO(prefix_4, N4)
+        PREFIX_MACRO(prefix_u, U)
+        PREFIX_MACRO(prefix_p, P)
+        PREFIX_MACRO(prefix_n, N)
+        PREFIX_MACRO(prefix_m, M)
+        PREFIX_MACRO(prefix_c, C)
+        PREFIX_MACRO(prefix_g, G)
+        PREFIX_MACRO(prefix_z, Z)
 
     };
     combos {
