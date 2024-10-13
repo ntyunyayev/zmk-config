@@ -22,6 +22,12 @@
         #binding-cells = <0>; \
         bindings = <&macro_tap &kp LC(SPACE) &kp keycode>; \
 };
+#define ACCENT_MACRO(name, accent, keycode) \
+    name: name { \
+        compatible = "zmk,behavior-macro"; \
+        #binding-cells = <0>; \
+        bindings = <&macro_tap &kp RA(accent) &kp keycode>; \
+    };
 / {
     behaviors {
         ht: hold_tap {
@@ -35,62 +41,16 @@
         };
     };
     macros {
-        e_aigue: e_aigue {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp RA(SQT) &kp E>
-                ;
-        };
-        e_grave: e_grave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp RA(GRAVE) &kp E>
-                ;
-        };
-        a_grave: a_grave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp RA(GRAVE) &kp A>
-                ;
-        };
-        e_circ: e_circ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp RA(N6) &kp E>
-                ;
-        };
-        i_circ: i_circ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp RA(N6) &kp I>
-                ;
-        };
-        o_circ: o_circ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp RA(N6) &kp O>
-                ;
-        };
-        a_circ: a_circ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp RA(N6) &kp A>
-                ;
-        };
-        u_accent: u_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp RA(GRAVE) &kp U>
-                ;
-        };
+        // FRENCH
+        ACCENT_MACRO(e_aigue, SQT, E)
+        ACCENT_MACRO(e_grave, GRAVE, E)
+        ACCENT_MACRO(a_grave, GRAVE, A)
+        ACCENT_MACRO(e_circ, N6, E)
+        ACCENT_MACRO(i_circ, N6, I)
+        ACCENT_MACRO(o_circ, N6, O)
+        ACCENT_MACRO(a_circ, N6, A)
+        ACCENT_MACRO(u_accent, GRAVE, U)
+        // TMUX
         PREFIX_MACRO(prefix_0, N0)
         PREFIX_MACRO(prefix_1, N1)
         PREFIX_MACRO(prefix_2, N2)
