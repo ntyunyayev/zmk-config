@@ -11,7 +11,7 @@
 #define LAYER_FROW     3
 #define LAYER_NUM      4
 #define LAYER_FRENCH   5
-#define LAYER_VIM_TMUX 6
+#define LAYER_TMUX 6
 
 &lt {
     quick-tap-ms = <180>;
@@ -62,6 +62,7 @@
         PREFIX_MACRO(prefix_m, M)
         PREFIX_MACRO(prefix_c, C)
         PREFIX_MACRO(prefix_g, G)
+        PREFIX_MACRO(prefix_d, D)
         PREFIX_MACRO(prefix_z, Z)
 
     };
@@ -97,19 +98,19 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <                                 
-//        ┌───┬────────────┬────────────┬────────────────────┬───────────────────────┐   ┌─────────────────────┬─────────────────────┬────────────┬────────────┬───┐
-//        │ Q │     W      │     E      │  lt laltYER_NUM R  │           T           │   │          Y          │          U          │     I      │     O      │ P │
-//        ├───┼────────────┼────────────┼────────────────────┼───────────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
-//        │ A │ &ht lgui S │ &ht lsft D │     &ht lctl F     │      &ht lalt G       │   │     &ht lalt H      │     &ht rctl J      │ &ht rsft K │ &ht lgui L │ ; │
-//        ├───┼────────────┼────────────┼────────────────────┼───────────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
-//        │ Z │     X      │     C      │         V          │ lt laltYER_VIM_TMUX B │   │          N          │ lt laltYER_FRENCH M │     ,      │     .      │ / │
-//        └───┴────────────┴────────────┼────────────────────┼───────────────────────┤   ├─────────────────────┼─────────────────────┼────────────┴────────────┴───┘
-//                                      │ lt laltYER_NAV tab │         lsft          │   │ lt laltYER_FROW spc │ lt laltYER_SYM bspc │
-//                                      └────────────────────┴───────────────────────┘   └─────────────────────┴─────────────────────┘
-      &kp Q   &kp W        &kp E         &lt LAYER_NUM R     &kp T                      &kp Y                  &kp U                &kp I         &kp O        &kp P
-      &kp A   &ht LGUI S   &ht LSHFT D   &ht LCTRL F         &ht LALT G                 &ht LALT H             &ht RCTRL J          &ht RSHFT K   &ht LGUI L   &kp SEMI
-      &kp Z   &kp X        &kp C         &kp V               &lt LAYER_VIM_TMUX B       &kp N                  &lt LAYER_FRENCH M   &kp COMMA     &kp DOT      &kp FSLH
-                                         &lt LAYER_NAV TAB   &kp LSHFT                  &lt LAYER_FROW SPACE   &lt LAYER_SYM BSPC
+//        ┌───┬────────────┬────────────┬────────────────────┬───────────────────┐   ┌─────────────────────┬─────────────────────┬────────────┬────────────┬───┐
+//        │ Q │     W      │     E      │  lt laltYER_NUM R  │         T         │   │          Y          │          U          │     I      │     O      │ P │
+//        ├───┼────────────┼────────────┼────────────────────┼───────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
+//        │ A │ &ht lgui S │ &ht lsft D │     &ht lctl F     │    &ht lalt G     │   │     &ht lalt H      │     &ht rctl J      │ &ht rsft K │ &ht lgui L │ ; │
+//        ├───┼────────────┼────────────┼────────────────────┼───────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
+//        │ Z │     X      │     C      │         V          │ lt laltYER_TMUX B │   │          N          │ lt laltYER_FRENCH M │     ,      │     .      │ / │
+//        └───┴────────────┴────────────┼────────────────────┼───────────────────┤   ├─────────────────────┼─────────────────────┼────────────┴────────────┴───┘
+//                                      │ lt laltYER_NAV tab │       lsft        │   │ lt laltYER_FROW spc │ lt laltYER_SYM bspc │
+//                                      └────────────────────┴───────────────────┘   └─────────────────────┴─────────────────────┘
+      &kp Q   &kp W        &kp E         &lt LAYER_NUM R     &kp T                  &kp Y                  &kp U                &kp I         &kp O        &kp P
+      &kp A   &ht LGUI S   &ht LSHFT D   &ht LCTRL F         &ht LALT G             &ht LALT H             &ht RCTRL J          &ht RSHFT K   &ht LGUI L   &kp SEMI
+      &kp Z   &kp X        &kp C         &kp V               &lt LAYER_TMUX B       &kp N                  &lt LAYER_FRENCH M   &kp COMMA     &kp DOT      &kp FSLH
+                                         &lt LAYER_NAV TAB   &kp LSHFT              &lt LAYER_FROW SPACE   &lt LAYER_SYM BSPC
             >;
         };
 
@@ -202,19 +203,19 @@
                                      &trans          &trans         &trans   &trans
             >;
         };
-        french_vim_tmux_layer {
+        tmux_layer {
             bindings = <
 //        ┌─────┬─────┬───────────┬─────┬───────────┐   ┌───────────┬───────────┬───────────┬───────────┬───────────┐
 //        │     │     │           │     │           │   │           │ &prefix_u │           │           │ &prefix_p │
 //        ├─────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
-//        │     │     │           │     │ &prefix_g │   │ &prefix_0 │ &prefix_1 │ &prefix_2 │ &prefix_3 │ &prefix_4 │
+//        │     │     │ &prefix_d │     │ &prefix_g │   │ &prefix_0 │ &prefix_1 │ &prefix_2 │ &prefix_3 │ &prefix_4 │
 //        ├─────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
 //        │     │     │ &prefix_c │     │           │   │ &prefix_n │ &prefix_m │           │           │           │
 //        └─────┴─────┴───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┴───────────┴───────────┘
 //                                │     │           │   │           │           │
 //                                └─────┴───────────┘   └───────────┴───────────┘
       &trans   &trans   &trans      &trans   &trans          &trans      &prefix_u   &trans      &trans      &prefix_p
-      &trans   &trans   &trans      &trans   &prefix_g       &prefix_0   &prefix_1   &prefix_2   &prefix_3   &prefix_4
+      &trans   &trans   &prefix_d   &trans   &prefix_g       &prefix_0   &prefix_1   &prefix_2   &prefix_3   &prefix_4
       &trans   &trans   &prefix_c   &trans   &trans          &prefix_n   &prefix_m   &trans      &trans      &trans
                                     &trans   &trans          &trans      &trans
             >;
