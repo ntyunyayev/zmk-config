@@ -101,14 +101,14 @@
 //        ┌───┬────────────┬────────────┬────────────────────┬───────────────────┐   ┌─────────────────────┬─────────────────────┬────────────┬────────────┬───┐
 //        │ Q │     W      │     E      │  lt laltYER_NUM R  │         T         │   │          Y          │          U          │     I      │     O      │ P │
 //        ├───┼────────────┼────────────┼────────────────────┼───────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
-//        │ A │ &ht lgui S │ &ht lsft D │     &ht lctl F     │    &ht lalt G     │   │     &ht lalt H      │     &ht rctl J      │ &ht rsft K │ &ht lgui L │ ; │
+//        │ A │ &ht lgui S │ &ht lsft D │     &ht lctl F     │    &ht lalt G     │   │     &ht lalt H      │     &ht lctl J      │ &ht rsft K │ &ht lgui L │ ; │
 //        ├───┼────────────┼────────────┼────────────────────┼───────────────────┤   ├─────────────────────┼─────────────────────┼────────────┼────────────┼───┤
 //        │ Z │     X      │     C      │         V          │ lt laltYER_TMUX B │   │          N          │ lt laltYER_FRENCH M │     ,      │     .      │ / │
 //        └───┴────────────┴────────────┼────────────────────┼───────────────────┤   ├─────────────────────┼─────────────────────┼────────────┴────────────┴───┘
 //                                      │ lt laltYER_NAV tab │       lsft        │   │ lt laltYER_FROW spc │ lt laltYER_SYM bspc │
 //                                      └────────────────────┴───────────────────┘   └─────────────────────┴─────────────────────┘
       &kp Q   &kp W        &kp E         &lt LAYER_NUM R     &kp T                  &kp Y                  &kp U                &kp I         &kp O        &kp P
-      &kp A   &ht LGUI S   &ht LSHFT D   &ht LCTRL F         &ht LALT G             &ht LALT H             &ht RCTRL J          &ht RSHFT K   &ht LGUI L   &kp SEMI
+      &kp A   &ht LGUI S   &ht LSHFT D   &ht LCTRL F         &ht LALT G             &ht LALT H             &ht LCTRL J          &ht RSHFT K   &ht LGUI L   &kp SEMI
       &kp Z   &kp X        &kp C         &kp V               &lt LAYER_TMUX B       &kp N                  &lt LAYER_FRENCH M   &kp COMMA     &kp DOT      &kp FSLH
                                          &lt LAYER_NAV TAB   &kp LSHFT              &lt LAYER_FROW SPACE   &lt LAYER_SYM BSPC
             >;
@@ -119,14 +119,14 @@
 //        ┌─────┬───────────────┬───────────────┬───────────────┬────────────┐   ┌────────────┬────────────┬────────────┬────────────┬─────┐
 //        │     │       {       │       [       │       (       │     ^      │   │     ~      │     )      │     ]      │     }      │     │
 //        ├─────┼───────────────┼───────────────┼───────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
-//        │     │ &ht lgui kp_- │ &ht lsft kp_* │ &ht lctl kp_= │ &ht lalt _ │   │ &ht lalt $ │ &ht rctl \ │ &ht rsft & │ &ht lgui ! │     │
+//        │     │ &ht lgui kp_- │ &ht lsft kp_* │ &ht lctl kp_= │ &ht lalt _ │   │ &ht lalt $ │ &ht lctl \ │ &ht rsft & │ &ht lgui ! │     │
 //        ├─────┼───────────────┼───────────────┼───────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼─────┤
 //        │     │     kp_+      │       #       │       @       │     '      │   │     "      │     |      │     %      │     `      │     │
 //        └─────┴───────────────┴───────────────┼───────────────┼────────────┤   ├────────────┼────────────┼────────────┴────────────┴─────┘
 //                                              │               │            │   │            │            │
 //                                              └───────────────┴────────────┘   └────────────┴────────────┘
       &trans   &kp LBRC            &kp LBKT                &kp LPAR             &kp CARET                 &kp TILDE       &kp RPAR         &kp RBKT         &kp RBRC        &trans
-      &trans   &ht LGUI KP_MINUS   &ht LSHFT KP_MULTIPLY   &ht LCTRL KP_EQUAL   &ht LALT UNDERSCORE       &ht LALT DLLR   &ht RCTRL BSLH   &ht RSHFT AMPS   &ht LGUI EXCL   &trans
+      &trans   &ht LGUI KP_MINUS   &ht LSHFT KP_MULTIPLY   &ht LCTRL KP_EQUAL   &ht LALT UNDERSCORE       &ht LALT DLLR   &ht LCTRL BSLH   &ht RSHFT AMPS   &ht LGUI EXCL   &trans
       &trans   &kp KP_PLUS         &kp HASH                &kp AT               &kp SQT                   &kp DQT         &kp PIPE         &kp PRCNT        &kp GRAVE       &trans
                                                            &trans               &trans                    &trans          &trans
             >;
