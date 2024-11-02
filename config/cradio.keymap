@@ -205,19 +205,19 @@
         };
         tmux_layer {
             bindings = <
-//        ┌─────┬─────┬───────────┬─────┬───────────┐   ┌───────────┬───────────┬───────────┬───────────┬───────────┐
-//        │     │     │           │     │           │   │           │ &prefix_u │           │           │ &prefix_p │
-//        ├─────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
-//        │     │     │ &prefix_d │     │ &prefix_g │   │ &prefix_0 │ &prefix_1 │ &prefix_2 │ &prefix_3 │ &prefix_4 │
-//        ├─────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
-//        │     │     │ &prefix_c │     │           │   │ &prefix_n │ &prefix_m │           │           │           │
-//        └─────┴─────┴───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┴───────────┴───────────┘
-//                                │     │           │   │           │           │
-//                                └─────┴───────────┘   └───────────┴───────────┘
-      &trans   &trans   &trans      &trans   &trans          &trans      &prefix_u   &trans      &trans      &prefix_p
-      &trans   &trans   &prefix_d   &trans   &prefix_g       &prefix_0   &prefix_1   &prefix_2   &prefix_3   &prefix_4
-      &trans   &trans   &prefix_c   &trans   &trans          &prefix_n   &prefix_m   &trans      &trans      &trans
-                                    &trans   &trans          &trans      &trans
+//        ┌───────────┬─────┬───────────┬─────┬───────────┐   ┌───────────┬───────────┬───────────┬───────────┬───────────┐
+//        │           │     │           │     │           │   │           │ &prefix_u │           │           │ &prefix_p │
+//        ├───────────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
+//        │           │     │ &prefix_d │     │ &prefix_g │   │ &prefix_0 │ &prefix_1 │ &prefix_2 │ &prefix_3 │ &prefix_4 │
+//        ├───────────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
+//        │ &prefix_z │     │ &prefix_c │     │           │   │ &prefix_n │ &prefix_m │           │           │           │
+//        └───────────┴─────┴───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┴───────────┴───────────┘
+//                                      │     │           │   │           │           │
+//                                      └─────┴───────────┘   └───────────┴───────────┘
+      &trans      &trans   &trans      &trans   &trans          &trans      &prefix_u   &trans      &trans      &prefix_p
+      &trans      &trans   &prefix_d   &trans   &prefix_g       &prefix_0   &prefix_1   &prefix_2   &prefix_3   &prefix_4
+      &prefix_z   &trans   &prefix_c   &trans   &trans          &prefix_n   &prefix_m   &trans      &trans      &trans
+                                       &trans   &trans          &trans      &trans
             >;
         };
     };
