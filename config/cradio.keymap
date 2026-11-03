@@ -65,6 +65,7 @@
         PREFIX_MACRO(prefix_g, G)
         PREFIX_MACRO(prefix_d, D)
         PREFIX_MACRO(prefix_z, Z)
+        PREFIX_MACRO(prefix_o, O)
 
     };
     combos {
@@ -207,7 +208,7 @@
         tmux_layer {
             bindings = <
 //        ┌───────────┬─────┬───────────┬─────┬───────────┐   ┌───────────┬───────────┬───────────┬───────────┬───────────┐
-//        │           │     │           │     │           │   │           │ &prefix_u │           │           │ &prefix_p │
+//        │           │     │           │     │           │   │           │ &prefix_u │           │ &prefix_o │ &prefix_p │
 //        ├───────────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
 //        │           │     │ &prefix_d │     │ &prefix_g │   │ &prefix_1 │ &prefix_2 │ &prefix_3 │ &prefix_4 │ &prefix_5 │
 //        ├───────────┼─────┼───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┤
@@ -215,7 +216,7 @@
 //        └───────────┴─────┴───────────┼─────┼───────────┤   ├───────────┼───────────┼───────────┴───────────┴───────────┘
 //                                      │     │           │   │           │           │
 //                                      └─────┴───────────┘   └───────────┴───────────┘
-      &trans      &trans   &trans      &trans   &trans          &trans      &prefix_u   &trans      &trans      &prefix_p
+      &trans      &trans   &trans      &trans   &trans          &trans      &prefix_u   &trans      &prefix_o   &prefix_p
       &trans      &trans   &prefix_d   &trans   &prefix_g       &prefix_1   &prefix_2   &prefix_3   &prefix_4   &prefix_5
       &prefix_z   &trans   &prefix_c   &trans   &trans          &prefix_n   &prefix_m   &trans      &trans      &trans
                                        &trans   &trans          &trans      &trans
